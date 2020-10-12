@@ -10,7 +10,7 @@ def on_click(x, y, button, pressed):
         return False
 
 # %%
-top = pyautogui.locateOnScreen('top.png', grayscale=True)
+top = pyautogui.locateOnScreen('top.png')
 bottom = pyautogui.locateOnScreen('bottom.png')
 text_im = pyautogui.screenshot(region = (top.left-3, top.top+top.height+70, bottom.width, bottom.top-top.top-top.height-70))
 
