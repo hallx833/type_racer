@@ -18,7 +18,6 @@ text = pyt.image_to_string(text_im)
 text = text.replace('\n', ' ')
 text = text.replace('|', 'I')
 
-# %%
 listener = mouse.Listener(on_click=on_click)
 listener.start()
 listener.join()
