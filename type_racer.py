@@ -2,12 +2,6 @@
 from PIL import Image
 import pytesseract as pyt
 import pyautogui
-from pynput import mouse
-
-# %%
-def on_click(x, y, button, pressed):
-    if button == mouse.Button.left:
-        return False
 
 # %%
 top = pyautogui.locateOnScreen('top.png')
@@ -18,9 +12,8 @@ text = pyt.image_to_string(text_im)
 text = text.replace('\n', ' ')
 text = text.replace('|', 'I')
 
-listener = mouse.Listener(on_click=on_click)
-listener.start()
-listener.join()
+pyautogui.moveTo(bottom.left + (bottom.width // 2), bottom.top + (bottom.height // 2))
+pyautogui.click()
 pyautogui.write(text, interval=0.01)
 
 # %%
